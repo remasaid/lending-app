@@ -1,0 +1,16 @@
+.footer-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 1366px;
+  height: 54px;
+  border-bottom: 1px solid lightgrey;
+  -ms-flex-align: center;
+      align-items: center;
+  margin: 0 auto;
+  color: #95989a;
+  background-color: #ffffff;
+}

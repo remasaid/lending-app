@@ -1,20 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+
+import "../src/css/global.css";
+
+//COMPONENTS
+import Authpage from "./pages/Authpage/Authpage";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isAuthenticated: false,
+      userId: ""
+    };
+  }
+
+  authenticate = () => {
+    this.setState({
+      isAuthenticated: true
+    });
+  };
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+    const { isAuthenticated } = this.state;
+    let authentication = "";
+    if (isAuthenticated) {
+      authentication = <Dashboard />;
+    } else if (!isAuthenticated) {
+      authentication = <Authpage authenticate={this.authenticate} />;
+    }
+
+    return <div className="App">{authentication}</div>;
   }
 }
 
