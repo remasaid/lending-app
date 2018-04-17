@@ -1,49 +1,52 @@
-@import "../../css/exports.less";
-
 .navbar-container {
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  //   position: fixed;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
   top: 0;
   width: 1366px;
   height: 54px;
-  border-bottom: 1px solid #6592ab;
-  align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
   margin: 0 auto;
   color: #95989a;
   background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-bottom: 1px solid #6592ab;
 }
-
 .navbar-tabs-container {
   margin-right: 78px;
-  display: inline-block;
+  width: 300px;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  border: 1px solid red;
 }
-
 .navbar-logo,
 .navbar-home,
 .navbar-documents,
 .navbar-reporting,
 .navbar-support,
 .navbar-profile,
-.navbar-search {
+.navbar-search,
+.navbar-right-tabs {
+  color: #95989a;
   padding-left: 40px;
   padding-right: 40px;
-  width: 54px;
+  white-space: nowrap;
   height: 17px;
   text-align: center;
   font-weight: 400;
 }
-
 .navbar-logo {
   margin-left: 78px;
   width: 149px;
   height: 54px;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -ms-flex-pack: center;
+      justify-content: center;
   border-right: 1px solid lightgrey;
-  img {
-    max-height: 100%;
-  }
+}
+.navbar-logo img {
+  max-height: 100%;
 }

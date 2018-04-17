@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
 import logo from "./logo.svg";
 
 import "../src/css/global.css";
@@ -11,7 +12,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      isAuthenticated: false,
+      isAuthenticated: true,
       userId: ""
     };
   }
@@ -21,16 +22,40 @@ class App extends Component {
       isAuthenticated: true
     });
   };
+
   render() {
     const { isAuthenticated } = this.state;
-    let authentication = "";
-    if (isAuthenticated) {
-      authentication = <Dashboard />;
-    } else if (!isAuthenticated) {
-      authentication = <Authpage authenticate={this.authenticate} />;
-    }
+    // let authentication = "";
+    // if (isAuthenticated) {
+    //   authentication = <Dashboard />;
+    // } else if (!isAuthenticated) {
+    //   authentication = <Authpage authenticate={this.authenticate} />;
+    // }
 
-    return <div className="App">{authentication}</div>;
+    return (
+      <div className="App">
+        <Switch>
+          <Route
+            path="/signin"
+            exact
+            component={() =>
+              !isAuthenticated ? <Authpage /> : <Redirect to="/home" />
+            }
+          />
+          <Route
+            path="/:activeLink"
+            exact
+            component={props =>
+              isAuthenticated ? (
+                <Dashboard match={props.match} />
+              ) : (
+                <Redirect to="/signin" />
+              )
+            }
+          />
+        </Switch>
+      </div>
+    );
   }
 }
 

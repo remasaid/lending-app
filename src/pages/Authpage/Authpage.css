@@ -1,37 +1,4 @@
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://fonts.gstatic.com/s/opensans/v15/mem6YaGs126MiZpBA-UFUK0Zdcg.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OUuhs.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf) format('truetype');
-}
 .authpage-container {
-  width: 1366px;
-  margin: 0 auto;
-  border: 1px solid #777;
   display: -ms-flexbox;
   display: flex;
 }
@@ -90,10 +57,16 @@
   display: block;
   margin-top: 19px;
   font-size: 14px;
+  color: #4350c1;
+  text-decoration: none;
 }
-a,
-a:visited,
-a:hover {
+.forgot-password:visited,
+.forgot-password:hover {
+  color: #4350c1;
+  text-decoration: none;
+}
+.need-assistance:visited,
+.need-assistance:hover {
   color: #4350c1;
   text-decoration: none;
 }
@@ -101,6 +74,8 @@ a:hover {
   text-align: center;
   font-size: 14px;
   margin-top: 76px;
+  color: #4350c1;
+  text-decoration: none;
 }
 .logo-container {
   width: 335px;
