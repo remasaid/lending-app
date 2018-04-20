@@ -1,0 +1,53 @@
+.toolbar-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-align: center;
+      align-items: center;
+  width: 594.42px;
+  height: 48px;
+  position: absolute;
+  right: 0;
+  top: 1px;
+  margin-top: 33px;
+}
+.toolbar {
+  height: 28px;
+  width: 160px;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+  color: #101542;
+  opacity: 0.5;
+  font-size: 10px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.toolbar-img {
+  width: 32px;
+  height: 24px;
+  margin-right: 10px;
+}
+.toolbar-number {
+  color: #0d1135;
+  opacity: 0.8;
+  font-size: 28px;
+  text-align: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  width: 16px;
+  height: 38px;
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 10px;
+}
+.toolbar-text {
+  text-align: left;
+}

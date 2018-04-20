@@ -110,11 +110,11 @@ export default class Authpage extends Component {
         top: "38px"
       }
     };
-    const logoStyle = {
-      backgroundImage: `url(${Logo})`,
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "100% 100%"
-    };
+    // const logoStyle = {
+    //   backgroundImage: `url(${Logo})`,
+    //   backgroundRepeat: "no-repeat",
+    //   backgroundSize: "100% 100%"
+    // };
     const backgroundstyle = {
       backgroundImage: `url(${Background})`,
       backgroundRepeat: "no-repeat",
@@ -127,7 +127,7 @@ export default class Authpage extends Component {
           <div className="right-container">
             <div className="form-container">
               <div className="logo-container">
-                <img className="logo" src={Logo} />
+                <img className="logo" src={Logo} alt="" />
               </div>
               <h1 className="sign-in">Sign in</h1>
               <div className="input-container">
@@ -141,7 +141,7 @@ export default class Authpage extends Component {
                   underlineStyle={styles.underlineStyle}
                   inputStyle={styles.inputStyle}
                   hintStyle={styles.hintStyle}
-                  hintStyle={styles.hintStyle}
+                  // hintStyle={styles.hintStyle}
                   onFocus={this.handleFocus}
                   onBlur={this.handleBlur}
                   onChange={this.handleChange}

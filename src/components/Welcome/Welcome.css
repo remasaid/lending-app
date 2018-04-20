@@ -1,0 +1,32 @@
+.welcome-container {
+  height: 76px;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  left: 0;
+  position: absolute;
+}
+.welcome-username {
+  font-size: 26px;
+  text-align: left;
+  color: #0d1135;
+  opacity: 0.8;
+  width: 100%;
+}
+.welcome-img {
+  width: 17px;
+  height: 19px;
+  color: #0d1135;
+  opacity: 0.5;
+  margin-left: 10px;
+}
+.welcome-date {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+  color: #000000;
+  opacity: 0.5;
+  width: 100%;
+  margin-top: 3px;
+}

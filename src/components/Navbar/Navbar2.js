@@ -1,13 +1,42 @@
 import React, { Component } from "react";
 import "./Navbar2.css";
+import "../Form/Form.css";
 import TextField from "material-ui/TextField";
 
+//ICONS
 import Logo from "../../img/bw_logo.jpg";
 import MagnifyingGlass from "../../img/search-glass.svg";
 import Arrow from "../../img/dropdown_arrow.svg";
 import { Link } from "react-router-dom";
 
+//COMPONENTS
+import Form from "../Form/Form";
+
 export default class Navbar2 extends Component {
+  constructor() {
+    super();
+    this.state = {
+      formFieldActive: false,
+
+      userId: ""
+    };
+  }
+
+  formField = () => {
+    const { formFieldActive } = this.state;
+    if (formFieldActive) {
+      this.setState({
+        formFieldActive: false
+      });
+    } else {
+      this.setState({
+        formFieldActive: true
+      });
+    }
+    this.props.backgroundBlurToggle();
+    console.log(formFieldActive);
+  };
+
   render() {
     const styles = {
       inputStyle: {
@@ -31,6 +60,7 @@ export default class Navbar2 extends Component {
 
     let rightNavItem;
     let { activeLink } = this.props;
+    let { formFieldActive } = this.state;
     console.log(activeLink);
     rightNavItem = [
       {
@@ -79,6 +109,12 @@ export default class Navbar2 extends Component {
             </div>
 
             <div className="navbar2-search-container">
+              {formFieldActive && (
+                <Form
+                  formFieldActive={formFieldActive}
+                  formField={this.formField}
+                />
+              )}
               <div className="navbar2-magnifying-glass">
                 <img src={MagnifyingGlass} />
               </div>
@@ -87,14 +123,18 @@ export default class Navbar2 extends Component {
                 placeHolder="MCAP #, Lender Ref # or Last Name"
               />
               <div className="navbar2-search-dropdown-arrow">
-                <img src={Arrow} />
+                <img
+                  src={Arrow}
+                  onClick={this.formField}
+                  // onClick={this.props.backgroundBlurToggle}
+                  className="drop-down-arrow"
+                />
               </div>
             </div>
           </div>
           <div className="navbar2-right">
             {rightNavJsx}
             <div className="profile-container">
-              {/* <img className="profile-photo" /> */}
               <div className="img-circular" />
               <p className="profile-name">JonJanes</p>
               <div className="navbar2-search-dropdown-arrow-adjustment">

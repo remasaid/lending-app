@@ -1,0 +1,133 @@
+.form-field-positioner {
+  position: absolute;
+  top: 0;
+}
+.form-field-container {
+  width: 529px;
+  height: 550px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.27);
+  display: fixed;
+  z-index: 3;
+  box-sizing: border-box;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: 3px;
+  margin-top: 2px;
+  padding-left: 40px;
+  padding-right: 28px;
+}
+.form-magnifying-glass {
+  width: 17.5px;
+  height: 17.5px;
+  margin-left: auto;
+  margin-top: 50px;
+  position: absolute;
+  top: -32px;
+  left: 15px;
+  z-index: 4;
+}
+.form-input {
+  -ms-flex: 0 1 47%;
+      flex: 0 1 47%;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #e1e1e1;
+  text-decoration: none;
+  width: 220px;
+  height: 26.5px;
+  color: #101542;
+  opacity: 0.5;
+}
+.form-input-long {
+  -ms-flex: 0 1 100%;
+      flex: 0 1 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #e1e1e1;
+  text-decoration: none;
+  width: 220px;
+  height: 26.5px;
+  display: -ms-flexbox;
+  display: flex;
+  color: #101542;
+  opacity: 0.5;
+}
+.form-label {
+  display: block;
+  width: 100%;
+  color: #101542;
+  opacity: 0.5;
+  font-size: 10px;
+  font-weight: 600;
+}
+.form-label-center {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #101542;
+  opacity: 0.5;
+  font-size: 10px;
+  font-weight: 600;
+}
+.form-arrow {
+  width: 16.02px;
+  height: 9.88px;
+  margin-left: auto;
+  margin-right: 44px;
+  margin-top: 50px;
+  position: absolute;
+  top: -30px;
+  left: 473px;
+  transform: rotate(180deg);
+  z-index: 4;
+  cursor: pointer;
+}
+.form-field-button-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  width: 500px;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  margin-right: -28px;
+  margin-bottom: -8px;
+}
+.form-field-button {
+  width: 150px;
+  height: 40px;
+  background-color: #4350c1;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 0 4px 0;
+}
+.form-field-reset {
+  width: 30px;
+  height: 17px;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  color: #95989a;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 40px;
+}

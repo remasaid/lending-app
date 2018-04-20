@@ -12,7 +12,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      isAuthenticated: true,
+      isAuthenticated: false,
       userId: ""
     };
   }
@@ -36,10 +36,14 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route
-            path="/signin"
+            path="/"
             exact
             component={() =>
-              !isAuthenticated ? <Authpage /> : <Redirect to="/home" />
+              !isAuthenticated ? (
+                <Authpage authenticate={this.authenticate} />
+              ) : (
+                <Redirect to="/home" />
+              )
             }
           />
           <Route
@@ -49,7 +53,7 @@ class App extends Component {
               isAuthenticated ? (
                 <Dashboard match={props.match} />
               ) : (
-                <Redirect to="/signin" />
+                <Redirect to="/" />
               )
             }
           />
