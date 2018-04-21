@@ -29,9 +29,9 @@ export default class Welcome extends Component {
       <div className="welcome-container">
         <div className="welcome-username">
           Welcome {userName}
-          <a href="/edit">
+          <Link to="#">
             <img src={EditUser} alt="" className="welcome-img" />
-          </a>
+          </Link>
         </div>
         <div className="welcome-date">It's {date}</div>
       </div>

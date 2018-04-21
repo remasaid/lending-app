@@ -4,6 +4,7 @@ import "./View.css";
 //COMPONENTS
 import ToolBar from "../ToolBar/ToolBar";
 import Welcome from "../Welcome/Welcome";
+import Widget from "../Widget/Widget";
 
 export default class View extends Component {
   render() {
@@ -18,6 +19,7 @@ export default class View extends Component {
       >
         <Welcome userName={userName} />
         <ToolBar />
+        <Widget />
       </div>
     );
   }
