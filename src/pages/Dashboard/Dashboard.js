@@ -34,6 +34,7 @@ export default class Dashboard extends Component {
     const { userName } = this.state;
     const { match } = this.props;
     const { activeLink } = match.params;
+
     return (
       <div className="dashboard-container">
         <Navbar2

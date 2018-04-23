@@ -23,6 +23,7 @@ export default class View extends Component {
         <ToolBar />
         <Widget />
         <Carousel />
+        <DocumentExchange />
       </div>
     );
   }
