@@ -1,13 +1,16 @@
 .view-container {
   min-height: 1300px;
   z-index: 1;
-  display: -ms-flexbox;
-  display: flex;
+  display: flow-root;
   -ms-flex-pack: center;
       justify-content: center;
   position: relative;
   margin: 95px 95px 50.5px 95px;
 }
 .background-blur {
-  background-color: rgba(0, 0, 0, 0.2);
+  filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -webkit-filter: blur(5px);
 }

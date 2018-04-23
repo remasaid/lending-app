@@ -1,0 +1,17 @@
+.document-exchange-container {
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  width: 499px;
+  height: 353px;
+  position: absolute;
+  right: 0;
+  top: 218px;
+}
+.document-exchange-positioner {
+  color: #101542;
+  opacity: 0.5;
+  margin: 13px 16px;
+  font-size: 10px;
+  font-weight: 600;
+}

@@ -5,6 +5,8 @@ import "./View.css";
 import ToolBar from "../ToolBar/ToolBar";
 import Welcome from "../Welcome/Welcome";
 import Widget from "../Widget/Widget";
+import Carousel from "../Carousel/Carousel";
+import DocumentExchange from "../DocumentExchange/DocumentExchange";
 
 export default class View extends Component {
   render() {
@@ -20,6 +22,7 @@ export default class View extends Component {
         <Welcome userName={userName} />
         <ToolBar />
         <Widget />
+        <Carousel />
       </div>
     );
   }

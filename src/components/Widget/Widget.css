@@ -7,7 +7,10 @@
       justify-content: space-between;
   -ms-flex-align: center;
       align-items: center;
-  margin-top: 117px;
+  margin-top: 80px;
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
 }
 .widget-container :last-child {
   border-right: none;
@@ -39,6 +42,8 @@
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 1px;
+  -ms-flex-align: center;
+      align-items: center;
 }
 .widget-label {
   color: #171e5b;
@@ -46,13 +51,17 @@
   font-size: 8px;
   font-weight: bold;
   text-align: left;
-  width: 40%;
+  width: 20%;
 }
 .widget-progress {
   background-color: #8c94de;
   border-radius: 32px;
-  width: 50%;
+  width: 60%;
+  height: 6px;
 }
 .progress-bottom {
   background-color: #6ac190;
+}
+.widget-graph {
+  font-size: 8px;
 }
