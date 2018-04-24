@@ -18,23 +18,27 @@ export default class DocumentExchange extends Component {
       documentList: [
         {
           type: "jpg",
-          title: "Consolidated Portfolie",
-          date: "May 17, 2017"
+          title: "Consolidated Portfolio",
+          date: "May 17, 2017",
+          src: JPG
         },
         {
-          type: "jpg",
-          title: "Consolidated Portfolie",
-          date: "May 17, 2017"
+          type: "pdf",
+          title: "Transactional Extract",
+          date: "May 17, 2017",
+          src: PDF
         },
         {
-          type: "jpg",
-          title: "Consolidated Portfolie",
-          date: "May 17, 2017"
+          type: "doc",
+          title: "Dictionary (Portfolio Data)",
+          date: "May 17, 2017",
+          src: DOC
         },
         {
-          type: "jpg",
-          title: "Consolidated Portfolie",
-          date: "May 17, 2017"
+          type: "xls",
+          title: "Monthly Report",
+          date: "May 17, 2017",
+          src: XLS
         }
       ]
     };
@@ -44,14 +48,19 @@ export default class DocumentExchange extends Component {
   };
 
   render() {
-    const styles = {
-      border: "1px solid black",
-      width: "456px",
-      height: "60",
-      color: "black",
-      padding: 20,
-      backgroundColor: "red"
-    };
+    const { documentList } = this.state;
+    let documentExchangeJsx = documentList.map((document, index) => {
+      return (
+        <div className="document-list-item">
+          <img src={document.src} alt="" className="document-list-img" />
+          <div className="document-list-title">{document.title}</div>
+          <br />
+          <br />
+          <div className="document-list-date">{document.date}</div>
+        </div>
+      );
+    });
+
     return (
       <div className="document-exchange-container">
         <div className="document-exchange-positioner">
@@ -64,6 +73,7 @@ export default class DocumentExchange extends Component {
               </div>
             </FileDrop>
           </div>
+          <div className="document-list-container">{documentExchangeJsx}</div>
         </div>
       </div>
     );
