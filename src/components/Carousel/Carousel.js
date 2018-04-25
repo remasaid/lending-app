@@ -45,8 +45,10 @@ export default class Carousel extends Component {
         <div className="carousel-item-container">
           <img className="carousel-item-img" src={item.img} />
           <div className="image-overlay" />
-          <h1 className="carousel-item-header">{item.header}</h1>
-          <p className="carousel-item-text">{item.text}</p>
+          <div className="carousel-item-details">
+            <h1 className="carousel-item-header">{item.header}</h1>
+            <p className="carousel-item-text">{item.text}</p>
+          </div>
         </div>
       );
     });

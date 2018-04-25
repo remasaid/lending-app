@@ -21,6 +21,10 @@
   bottom: 353px;
   opacity: 0.44;
   background-color: black;
+  border-radius: 4px;
+}
+.carousel-item-details {
+  margin-left: 22px;
 }
 .carousel-item-header {
   font-size: 22px;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./DocumentExchange.css";
+import { Link } from "react-router-dom";
 
 //ICONS
 import Upload from "../../img/upload.svg";
@@ -53,10 +54,11 @@ export default class DocumentExchange extends Component {
       return (
         <div className="document-list-item">
           <img src={document.src} alt="" className="document-list-img" />
-          <div className="document-list-title">{document.title}</div>
-          <br />
-          <br />
-          <div className="document-list-date">{document.date}</div>
+          <div className="document-list-details">
+            <div className="document-list-title">{document.title}</div>
+
+            <div className="document-list-date">{document.date}</div>
+          </div>
         </div>
       );
     });
@@ -64,7 +66,7 @@ export default class DocumentExchange extends Component {
     return (
       <div className="document-exchange-container">
         <div className="document-exchange-positioner">
-          DOCUMENT EXCHANGE
+          <p className="document-exchange-heading">DOCUMENT EXCHANGE</p>
           <div id="react-file-drop-demo">
             <FileDrop onDrop={this.handleDrop}>
               <div className="document-exchange-content">
