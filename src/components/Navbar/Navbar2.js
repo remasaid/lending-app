@@ -11,13 +11,14 @@ import { Link } from "react-router-dom";
 
 //COMPONENTS
 import Form from "../Form/Form";
+import EditProfile from "../EditProfile/EditProfile";
 
 export default class Navbar2 extends Component {
   constructor() {
     super();
     this.state = {
       formFieldActive: false,
-
+      editProfileActive: false,
       userId: ""
     };
   }
@@ -37,6 +38,19 @@ export default class Navbar2 extends Component {
     console.log(formFieldActive);
   };
 
+  editProfile = () => {
+    const { editProfileActive } = this.state;
+    if (!editProfileActive) {
+      this.setState({
+        editProfileActive: true
+      });
+    } else {
+      this.setState({
+        editProfileActive: false
+      });
+    }
+    console.log(editProfileActive);
+  };
   render() {
     const styles = {
       inputStyle: {
@@ -98,6 +112,7 @@ export default class Navbar2 extends Component {
         </Link>
       );
     });
+    const { signout } = this.props;
     return (
       <div className="navbar2-container">
         <div className="navbar2-wrapper">
@@ -126,7 +141,6 @@ export default class Navbar2 extends Component {
                 <img
                   src={Arrow}
                   onClick={this.formField}
-                  // onClick={this.props.backgroundBlurToggle}
                   className="drop-down-arrow"
                 />
               </div>
@@ -135,10 +149,17 @@ export default class Navbar2 extends Component {
           <div className="navbar2-right">
             {rightNavJsx}
             <div className="profile-container">
+              {this.state.editProfileActive && (
+                <EditProfile
+                  editProfileActive={this.state.editProfileActive}
+                  editProfile={this.editProfile}
+                  signout={signout}
+                />
+              )}
               <div className="img-circular" />
               <p className="profile-name">JonJanes</p>
               <div className="navbar2-search-dropdown-arrow-adjustment">
-                <img src={Arrow} />
+                <img src={Arrow} onClick={this.editProfile} />
               </div>
             </div>
           </div>

@@ -3,9 +3,9 @@
   border: 1px solid #e1e1e1;
   border-radius: 4px;
   width: 499px;
-  position: absolute;
   right: 0;
-  top: 218px;
+  position: relative;
+  margin-top: 17.21px;
 }
 .document-exchange-positioner {
   margin: 13px 16px;

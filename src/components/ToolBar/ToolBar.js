@@ -8,6 +8,9 @@ import Toolbox from "../../img/toolbox.svg";
 import Documents from "../../img/file.svg";
 import { MapsTransferWithinAStation } from "material-ui";
 
+//COMPONENTS
+import Messages from "../Messages/Messages";
+
 export default class ToolBar extends Component {
   constructor() {
     super();
@@ -25,35 +28,57 @@ export default class ToolBar extends Component {
           text: "NEW MESSAGE IN YOUR INBOX",
           number: 4,
           to: "/messages",
-          src: Message
+          src: Message,
+          component: Messages
         },
         {
           type: "documents",
           text: "NEW DOCUMENTS TO REVIEW",
           number: 8,
           to: "/documents",
-          src: Documents
+          src: Documents,
+          component: ""
         }
-      ]
+      ],
+      toolBoxOpen: false
     };
   }
+
+  onClick = type => {
+    if (type === "toolbox") {
+      this.setState({
+        toolBoxOpen: !this.state.toolboxOpen
+      });
+    } else if (type === "messages") {
+      this.props.toggleMessages();
+    }
+  };
+
   render() {
     let { toolbar } = this.state;
     let toolbarJsx = toolbar.map((toolbar, index) => {
       if (toolbar.type === "toolbox") {
         return (
-          <Link className="toolbar" key={index} to={toolbar.to}>
+          <div
+            className="toolbar"
+            key={index}
+            onClick={() => this.onClick(toolbar.type)}
+          >
             <img src={toolbar.src} alt="" className="toolbar-img" />
             <div className="toolbar-text"> {toolbar.text} </div>
-          </Link>
+          </div>
         );
       } else {
         return (
-          <Link className="toolbar" key={index} to={toolbar.to}>
+          <div
+            className="toolbar"
+            key={index}
+            onClick={() => this.onClick(toolbar.type)}
+          >
             <img src={toolbar.src} alt="" className="toolbar-img" />
             <div className="toolbar-number"> {toolbar.number}</div>
             <div className="toolbar-text"> {toolbar.text}</div>
-          </Link>
+          </div>
         );
       }
     });

@@ -7,7 +7,6 @@
       justify-content: space-between;
   -ms-flex-align: center;
       align-items: center;
-  margin-top: 80px;
   background-color: #ffffff;
   border: 1px solid #e1e1e1;
   border-radius: 4px;
@@ -56,7 +55,7 @@
 .widget-progress {
   background-color: #8c94de;
   border-radius: 32px;
-  width: 60%;
+  width: 90px;
   height: 6px;
 }
 .progress-bottom {

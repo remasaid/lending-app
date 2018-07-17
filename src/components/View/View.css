@@ -14,3 +14,10 @@
   -moz-filter: blur(5px);
   -webkit-filter: blur(5px);
 }
+.view-row {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}

@@ -7,9 +7,18 @@ import Welcome from "../Welcome/Welcome";
 import Widget from "../Widget/Widget";
 import Carousel from "../Carousel/Carousel";
 import DocumentExchange from "../DocumentExchange/DocumentExchange";
+import ImportantNews from "../ImportantNews/ImportantNews";
 
 export default class View extends Component {
+  constructor() {
+    super();
+    this.state = {
+      importantNewsActive: true
+    };
+  }
+
   render() {
+    const { importantNewsActive, messagesOpen } = this.state;
     const { userName } = this.props;
     return (
       <div
@@ -19,11 +28,19 @@ export default class View extends Component {
             : "view-container"
         }
       >
-        <Welcome userName={userName} />
-        <ToolBar />
+        {importantNewsActive && (
+          <ImportantNews importantNewsActive={importantNewsActive} />
+        )}
+
+        <div className="view-row">
+          <Welcome userName={userName} />
+          <ToolBar toggleMessages={this.props.toggleMessages} />
+        </div>
         <Widget />
-        <Carousel />
-        <DocumentExchange />
+        <div className="view-row">
+          <Carousel />
+          <DocumentExchange />
+        </div>
       </div>
     );
   }

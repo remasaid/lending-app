@@ -23,6 +23,12 @@ class App extends Component {
     });
   };
 
+  signout = () => {
+    this.setState({
+      isAuthenticated: false
+    });
+  };
+
   render() {
     const { isAuthenticated } = this.state;
     // let authentication = "";
@@ -51,7 +57,7 @@ class App extends Component {
             exact
             component={props =>
               isAuthenticated ? (
-                <Dashboard match={props.match} />
+                <Dashboard match={props.match} signout={this.signout} />
               ) : (
                 <Redirect to="/" />
               )
