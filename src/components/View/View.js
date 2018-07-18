@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
 import "./View.css";
 
 //COMPONENTS
@@ -18,16 +19,7 @@ export default class View extends Component {
   render() {
     const { importantNewsActive, messagesOpen } = this.state;
     const { userName } = this.props;
-    const { activeLink } = this.props;
 
-    let activeView = <Home />;
-    if (activeLink === "documents") {
-      activeView = <Document />;
-    } else if (activeLink === "reporting") {
-      activeView = <Reporting />;
-    } else if (activeLink === "support") {
-      activeView = <Support />;
-    }
     return (
       <div
         className={
@@ -36,7 +28,10 @@ export default class View extends Component {
             : "view-container"
         }
       >
-        {activeView}
+        <Route path="/home" component={Home} />
+        <Route path="/documents" component={Document} />
+        <Route path="/reporting" component={Reporting} />
+        <Route path="/support" component={Support} />
       </div>
     );
   }
