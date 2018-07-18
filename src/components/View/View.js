@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import "./View.css";
 
 //COMPONENTS
-import ToolBar from "../ToolBar/ToolBar";
-import Welcome from "../Welcome/Welcome";
-import Widget from "../Widget/Widget";
-import Carousel from "../Carousel/Carousel";
-import DocumentExchange from "../DocumentExchange/DocumentExchange";
-import ImportantNews from "../ImportantNews/ImportantNews";
+import Home from "../Home/Home";
+import Document from "../Documents/Documents";
+import Support from "../Support/Support";
+import Reporting from "../Reporting/Reporting";
 
 export default class View extends Component {
   constructor() {
@@ -20,6 +18,16 @@ export default class View extends Component {
   render() {
     const { importantNewsActive, messagesOpen } = this.state;
     const { userName } = this.props;
+    const { activeLink } = this.props;
+
+    let activeView = <Home />;
+    if (activeLink === "documents") {
+      activeView = <Document />;
+    } else if (activeLink === "reporting") {
+      activeView = <Reporting />;
+    } else if (activeLink === "support") {
+      activeView = <Support />;
+    }
     return (
       <div
         className={
@@ -28,19 +36,7 @@ export default class View extends Component {
             : "view-container"
         }
       >
-        {importantNewsActive && (
-          <ImportantNews importantNewsActive={importantNewsActive} />
-        )}
-
-        <div className="view-row">
-          <Welcome userName={userName} />
-          <ToolBar toggleMessages={this.props.toggleMessages} />
-        </div>
-        <Widget />
-        <div className="view-row">
-          <Carousel />
-          <DocumentExchange />
-        </div>
+        {activeView}
       </div>
     );
   }

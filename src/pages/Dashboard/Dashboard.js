@@ -55,6 +55,7 @@ export default class Dashboard extends Component {
           backgroundBlur={this.state.backgroundBlur}
           userName={userName}
           toggleMessages={this.toggleMessages}
+          activeLink={activeLink}
         />
         <Footer />
         {messagesOpen ? <Messages /> : ""}
