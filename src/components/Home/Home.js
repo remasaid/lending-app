@@ -8,14 +8,22 @@ import Widget from "../Widget/Widget";
 import Carousel from "../Carousel/Carousel";
 import DocumentExchange from "../DocumentExchange/DocumentExchange";
 import ImportantNews from "../ImportantNews/ImportantNews";
+import Messages from "../Messages/Messages";
 
 export default class Home extends Component {
   constructor() {
     super();
     this.state = {
-      importantNewsActive: true
+      importantNewsActive: true,
+      messagesOpen: false
     };
   }
+  toggleMessages = () => {
+    this.setState({
+      messagesOpen: !this.state.messagesOpen
+    });
+  };
+
   render() {
     const { importantNewsActive, messagesOpen } = this.state;
     const { userName } = this.props;
@@ -27,13 +35,14 @@ export default class Home extends Component {
 
         <div className="view-row">
           <Welcome userName={userName} />
-          <ToolBar toggleMessages={this.props.toggleMessages} />
+          <ToolBar toggleMessages={this.toggleMessages} />
         </div>
         <Widget />
         <div className="view-row">
           <Carousel />
           <DocumentExchange />
         </div>
+        {messagesOpen && <Messages toggleMessages={this.toggleMessages} />}
       </div>
     );
   }

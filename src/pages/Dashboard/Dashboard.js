@@ -18,11 +18,11 @@ export default class Dashboard extends Component {
     };
   }
 
-  toggleMessages = () => {
-    this.setState({
-      messagesOpen: !this.state.messagesOpen
-    });
-  };
+  // toggleMessages = () => {
+  //   this.setState({
+  //     messagesOpen: !this.state.messagesOpen
+  //   });
+  // };
 
   backgroundBlurToggle = () => {
     const { backgroundBlur } = this.state;

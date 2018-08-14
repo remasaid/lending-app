@@ -63,7 +63,10 @@ export default class Messages extends Component {
         <div className="messages-positioner">
           <div className="header-positioner">
             <p className="messages-header">Messages</p>
-            <button className="messages-button">
+            <button
+              className="messages-button"
+              onClick={this.props.toggleMessages}
+            >
               <p className="message-button-text">Close</p>
             </button>
           </div>
